@@ -5,7 +5,7 @@ const db = require('../db/dbScript.json');
 const uuid = require('uuid');
 
 //get function
-router.get('/api/notes', function(req, res) {
+router.get('/api/notes', async function(req, res) {
 
     const notes = await db.read();
     return res.json(notes);
@@ -13,7 +13,7 @@ router.get('/api/notes', function(req, res) {
 });
 
 //post function
-router.post('/api/notes', function(req, res) {
+router.post('/api/notes', async function(req, res) {
 
     const notesCurrent = await db.read();
 
