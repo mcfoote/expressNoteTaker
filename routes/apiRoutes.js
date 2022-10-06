@@ -23,6 +23,10 @@ router.post('/api/notes', async function(req, res) {
         text: req.body.text
     };
 
-    await db.addNote
+    await db.addNote([...notesCurrent, noteNew]);
+
+    return res.send(noteNew);
 
 });
+
+//router.delete()

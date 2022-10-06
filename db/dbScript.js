@@ -1,12 +1,21 @@
+//local requirements
 const util = require('util');
 const fs = require('fs');
+//local variables
 const writeFile = util.promisify(fs.writeFile);
 const readFile = util.primisify(fs.readFile);
+const notesData = './db.json';
 
-class db {
+class Db {
 
-    addNote(data) {
+    async addNote(data) {
+        try {
+            await writeFile(notesData, JSON.stringify(data, null, '\t')).then(() => {
+                console.log('Note Added Successfully');
+            });
+        }catch(error) {
 
+        }
     }
 
     deleteNote(data) {
@@ -19,4 +28,4 @@ class db {
 
 }
 
-module.exports = new db();
+module.exports = new Db();
