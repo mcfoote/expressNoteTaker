@@ -6,9 +6,10 @@ const writeFile = util.promisify(fs.writeFile);
 const readFile = util.primisify(fs.readFile);
 const notesData = './db.json';
 
+//class def
 class Db {
 
-    async addNote(data) {
+    async add(data) {
         try {
             await writeFile(notesData, JSON.stringify(data, null, '\t')).then(() => {
                 console.log('Note Added Successfully');
@@ -18,8 +19,14 @@ class Db {
         }
     }
 
-    deleteNote(data) {
-
+    async delete(data) {
+        try {
+            await writeFile(notesData, JSON.stringify(data, null, '\t')).then(() => {
+                console.log('Note Deleted Successfully');
+            });
+        }catch(error) {
+            throw error;
+        }
     }
 
     async read() {
