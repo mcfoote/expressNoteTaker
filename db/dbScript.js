@@ -14,7 +14,7 @@ class Db {
                 console.log('Note Added Successfully');
             });
         }catch(error) {
-
+            throw error;
         }
     }
 
@@ -22,8 +22,13 @@ class Db {
 
     }
 
-    read() {
-
+    async read() {
+        try {
+            const notesOutput = await readFile(notesData, 'UTF8');
+            return notesOutput ? JSON.parse(notesOutput) : [];
+        }catch(error) {
+            throw error;
+        }
     }
 
 }
