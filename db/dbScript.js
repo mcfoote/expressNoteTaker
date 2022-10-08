@@ -3,7 +3,7 @@ const util = require('util');
 const fs = require('fs');
 //local variables
 const writeFile = util.promisify(fs.writeFile);
-const readFile = util.primisify(fs.readFile);
+const readFile = util.promisify(fs.readFile);
 const notesData = './db.json';
 
 //class def
