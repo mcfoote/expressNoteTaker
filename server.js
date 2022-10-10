@@ -17,6 +17,6 @@ app.use('/', htmlRoutes);
 app.use('/api', apiRoutes);
 
 
-app.listen(PORT, () =>
+app.listen(PORT, () => {
   console.log(`App listening at ${PORT} 🚀`)
-);
+});
