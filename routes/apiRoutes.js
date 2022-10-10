@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 let {addNote, delNote} = require('../db/dbScript');
-const {notesArr} = require('../db/db')
+let {notesArr} = require('../db/db')
 
 //get route
 router.get('/notes', (req, res) => {
