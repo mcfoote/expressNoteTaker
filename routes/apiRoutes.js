@@ -5,7 +5,7 @@ let {addNote, delNote} = require('../db/dbScript');
 const {notesArr} = require('../db/db')
 
 //get route
-router.get('/db', (req, res) => {
+router.get('/notes', (req, res) => {
 
     let result = notesArr;
     res.json(result);
@@ -13,7 +13,7 @@ router.get('/db', (req, res) => {
 });
 
 //post route 
-router.post('/db', (req, res) => {
+router.post('/notes', (req, res) => {
 
     if(notesArr) {
         req.body.id = notesArr.length.toString();
@@ -23,7 +23,7 @@ router.post('/db', (req, res) => {
 });
 
 //delete route
-router.delete('/db/:id', async(req, res) => {
+router.delete('/notes/:id', async(req, res) => {
 
     const {id} = req.params;
     notesArr = await delNote(id, notesArr);
