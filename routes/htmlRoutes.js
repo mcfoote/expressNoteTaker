@@ -3,13 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 //get function from 
-router.get('/', (req, res) => {
-
-    res.sendFile(path.join(__dirname, '../public/index.html'));
-
-});
-
-router.get('*', (req, res) => {
+router.get('/*', (req, res) => {
 
     res.sendFile(path.join(__dirname, '../public/index.html'));
 
