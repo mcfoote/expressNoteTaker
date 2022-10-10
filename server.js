@@ -13,8 +13,8 @@ app.use(express.urlencoded({ extended: true }));
 //Middleware serves public folder
 app.use(express.static('public'));
 
-app.use(htmlRoutes);
-app.use(apiRoutes);
+app.use('/', htmlRoutes);
+app.use('/api', apiRoutes);
 
 
 app.listen(PORT, () => {
