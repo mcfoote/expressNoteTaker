@@ -2,7 +2,6 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../db/dbScript.js');
-const uuid = require('uuid');
 
 //get route
 router.get('/api/notes', async function(req, res) {
