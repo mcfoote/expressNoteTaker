@@ -40,7 +40,7 @@ function delNote(id, notes) {
     //write out
     fs.writeFileSync(
         path.join(__dirname, './db.json'),
-        JSON.stringify({notesArr}, null, 2)
+        JSON.stringify({notesArrNew}, null, 2)
     )
 
     return notesArrNew;
