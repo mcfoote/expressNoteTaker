@@ -20,7 +20,7 @@ function addNote(content, notesArr) {
 // function to delete targeted note
 function delNote(id, notes) {
 
-    let notesArr = notes.filter(el => {
+    let notesArrNew = notes.filter(el => {
 
         if(el.id == id) {
             return false
@@ -32,8 +32,7 @@ function delNote(id, notes) {
 
     //correct index
     let index = 0;
-
-    notesArr.forEach(note => {
+    notesArrNew.forEach(note => {
         note.id = index;
         index++;
     });
@@ -44,7 +43,7 @@ function delNote(id, notes) {
         JSON.stringify({notesArr}, null, 2)
     )
 
-    return notesArr;
+    return notesArrNew;
 
 }
 
