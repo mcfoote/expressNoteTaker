@@ -1,8 +1,8 @@
 //local variables for requirements
 const express = require('express');
 const router = express.Router();
-let {addNote, delNote} = require('../db/dbScript');
 let {notesArr} = require('../db/db')
+const {addNote, delNote} = require('../db/dbScript');
 
 //get route
 router.get('/notes', (req, res) => {
