@@ -1,4 +1,4 @@
-//import express
+//import express and routers
 const express = require('express');
 const htmlRoutes = require('./routes/htmlRoutes');
 const apiRoutes = require('./routes/apiRoutes');
